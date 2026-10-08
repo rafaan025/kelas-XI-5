@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>XI-5 • Profil Kelas</title>
+<meta name="description" content="Profil Kelas XI-5 IPA." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- BACKGROUND LAYERS : Lab IPA + Marvel halftone + Rumus IPA -->
+<div class="bg-universe"></div>
+<div class="bg-blob b1"></div>
+<div class="bg-blob b2"></div>
+<div class="bg-blob b3"></div>
+<div class="bg-formulas" aria-hidden="true">
+  <span>E=mc²</span><span>F=m·a</span><span>H₂O</span><span>DNA</span><span>CO₂</span>
+  <span>PV=nRT</span><span>λ=v/f</span><span>NaCl</span><span>ATP→ADP</span><span>v=s/t</span>
+  <span>pH=-log[H⁺]</span><span>C₆H₁₂O₆</span><span>Ek=½mv²</span><span>Ep=m·g·h</span><span>Mitosis</span>
+  <span>Meiosis</span><span>W=F·s</span><span>V=I·R</span><span>H₂SO₄</span><span>CH₄+2O₂→CO₂+2H₂O</span>
+  <span>π=3.14</span><span>a²+b²=c²</span><span>O₂</span><span>HCl</span><span>Q=m·c·ΔT</span>
+  <span>ρ=m/V</span><span>6CO₂+6H₂O→C₆H₁₂O₆+6O₂</span><span>RNA</span><span>∫f(x)dx</span><span>Σ</span>
+  <span>√Δ∞</span><span>Enzim</span><span>Fe₂O₃</span><span>CaCO₃</span><span>s=v₀t+½at²</span>
+  <span>P=V·I</span><span>Kromosom</span><span>NaOH</span><span>N₂</span><span>y=mx+c</span>
+</div>
+<div class="bg-halftone"></div>
+<div class="bg-grid"></div>
+<canvas id="particles"></canvas>
+<div id="cursor-glow"></div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#beranda" class="brand">
+    <div class="logo-kelas-box"><span>LOGO<br>KELAS</span><img src="logo-kelas.png" alt="Logo Kelas" onerror="this.remove()" /></div>
+    <div>
+      <strong>XI-5 AVENGERS SCIENFIVE</strong>
+      <small>IPA</small>
+    </div>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#beranda" class="active">Beranda</a>
+    <a href="#stones">Mapel</a>
+    <a href="#hero">Siswa</a>
+    <a href="#jadwal">Jadwal</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#kontak" class="btn-ig-nav"><i class="fa-brands fa-instagram"></i> Instagram</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="menu"><i class="fa-solid fa-bars"></i></button>
+</nav>
+
+<!-- HERO -->
+<header id="beranda" class="hero">
+  <div class="hero-formulas" aria-hidden="true">
+    <span>E=mc²</span><span>H₂O</span><span>DNA 🧬</span><span>∑F=ma</span>
+    <span>CO₂</span><span>π=3.14</span><span>NaCl</span><span>ATP ⚡</span>
+    <span>v=s/t</span><span>O₂</span><span>mitosis</span><span>pH=7</span>
+    <span>PV=nRT</span><span>λ=v/f</span><span>C₆H₁₂O₆</span><span>a²+b²=c²</span>
+    <span>Ek=½mv²</span><span>Q=m·c·ΔT</span><span>Fe₂O₃</span><span>RNA</span>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-badge reveal">
+      <span class="pulse-dot"></span>
+      XI-5 • IPA
+    </div>
+    <h1 class="reveal">XI-5 <span class="outline">AVENGERS</span><br><span class="marvel-red">SCIENFIVE!</span></h1>
+    <p class="hero-sub reveal">
+      Tim Avengers-nya sains.
+    </p>
+    <div class="hero-stats reveal">
+      <div><strong id="stat-siswa">36</strong><small>Siswa</small></div>
+      <div><strong>IPA</strong><small>Jurusan</small></div>
+      <div><strong id="stat-mapel">14</strong><small>Mapel</small></div>
+      <div><strong>1</strong><small>Keluarga</small></div>
+    </div>
+    <div class="hero-cta reveal">
+      <a id="btn-ig-hero" href="https://instagram.com/xi5.assemble" target="_blank" class="btn btn-marvel">
+        <i class="fa-brands fa-instagram"></i> Instagram Kelas
+      </a>
+      <a href="#hero" class="btn btn-ghost"><i class="fa-solid fa-mask"></i> Lihat Siswa</a>
+    </div>
+    <div class="hero-wali reveal">
+      <img src="https://api.dicebear.com/9.x/personas/svg?seed=WaliKelas&backgroundColor=0a1931" alt="Wali Kelas" />
+      <div>
+        <small>WALI KELAS</small>
+        <strong id="wali-nama-hero">Ibu Dra. Sinta Maharani, M.Si</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual reveal">
+    <div class="arc-reactor">
+      <div class="arc-core"></div>
+      <div class="arc-ring r1"></div>
+      <div class="arc-ring r2"></div>
+      <div class="arc-ring r3"></div>
+    </div>
+    <div class="shield-cap">
+      <div class="c1"><div class="c2"><div class="c3"><i class="fa-solid fa-star"></i></div></div></div>
+    </div>
+    <!-- floating stones -->
+    <div class="stone s-space">Fis</div>
+    <div class="stone s-mind">Bio</div>
+    <div class="stone s-reality">Kim</div>
+    <div class="stone s-power">Mat</div>
+    <div class="spider-web">🕸️</div>
+    <div class="hero-card-tilt" id="tiltCard">
+      <div class="tilt-top"><span>STUDENT ID • STARK INDUSTRIES</span><i class="fa-solid fa-atom"></i></div>
+      <h3>XI-5 AVENGERS<br>SCIENFIVE</h3>
+      <p>"With great knowledge, comes great responsibility."</p>
+      <div class="tilt-bottom"><span id="kelas-label">XI-5 IPA • 2025/2026</span><span>★ ★ ★</span></div>
+    </div>
+  </div>
+
+  <a href="#stones" class="scroll-down"><span></span>scroll</a>
+</header>
+
+<div class="marquee"><div class="marquee-track">
+  <div class="marquee-group">
+    <span>FISIKA ⚛</span><span>✦</span><span>KIMIA 🧪</span><span>✦</span><span>BIOLOGI 🧬</span><span>✦</span><span>XI-5 🦸</span><span>✦</span><span>SCIENFIVE ⚡</span><span>✦</span>
+  </div>
+  <div class="marquee-group" aria-hidden="true">
+    <span>FISIKA ⚛</span><span>✦</span><span>KIMIA 🧪</span><span>✦</span><span>BIOLOGI 🧬</span><span>✦</span><span>XI-5 🦸</span><span>✦</span><span>SCIENFIVE ⚡</span><span>✦</span>
+  </div>
+</div></div>
+
+<!-- MAPEL -->
+<section id="stones" class="section">
+  <div class="section-head reveal">
+    <small>// 01 — MAPEL</small>
+    <h2>Pelajaran <span>IPA</span></h2>
+    <p>Klik untuk detail.</p>
+  </div>
+  <div class="stones-grid" id="stonesGrid"></div>
+</section>
+
+<!-- SISWA -->
+<section id="hero" class="section">
+  <div class="section-head reveal">
+    <small>// 02 — SISWA</small>
+    <h2>Siswa <span>XI-5</span></h2>
+    <p>Klik kartu untuk detail.</p>
+  </div>
+
+  <div class="toolbar reveal">
+    <div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input id="search" type="text" placeholder="Cari nama..." /></div>
+    <div class="filters" id="filters">
+      <button class="active" data-filter="all">Semua</button>
+      <button data-filter="pengurus">Pengurus</button>
+      <button data-filter="siswa">Siswa</button>
+    </div>
+  </div>
+
+  <h3 class="struktur-title reveal">STRUKTUR KELAS</h3>
+  <div class="pengurus-strip reveal" id="pengurusStrip"></div>
+  <div class="siswa-grid" id="siswaGrid"></div>
+</section>
+
+<!-- JADWAL -->
+<section id="jadwal" class="section">
+  <div class="section-head reveal">
+    <small>// 03 — JADWAL</small>
+    <h2>Jadwal <span>Mingguan</span></h2>
+  </div>
+  <div class="jadwal-wrap reveal">
+    <div class="jadwal-tabs" id="jadwalTabs"></div>
+    <div class="jadwal-card"><h3 id="jadwalHari">Senin</h3><ul id="jadwalList"></ul></div>
+    <div class="piket-card">
+      <h4><i class="fa-solid fa-broom"></i> Piket</h4>
+      <div id="piketHari"></div>
+      <div id="piketList" class="piket-grid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERI -->
+<section id="galeri" class="section">
+  <div class="section-head reveal">
+    <small>// 04 — GALERI</small>
+    <h2>Galeri <span>Kami</span></h2>
+    <p>Praktikum. Lomba. Santai.</p>
+  </div>
+  <div class="galeri-grid reveal" id="galeriGrid"></div>
+</section>
+
+<!-- KATA ILMUWAN -->
+<section id="ilmuwan" class="section">
+  <div class="section-head reveal">
+    <small>// 05 — KATA ILMUWAN</small>
+    <h2>Kata <span>Ilmuwan</span></h2>
+    <p>Motivasi dari para ilmuwan dunia buat anak XI-5 agar semangat belajar IPA.</p>
+  </div>
+
+  <div class="quote-hero reveal">
+    <div class="quote-mark">“</div>
+    <p id="quoteText">Imajinasi lebih penting daripada pengetahuan.</p>
+    <div class="quote-author">
+      <span id="quoteDot" class="quote-avatar">AE</span>
+      <div><strong id="quoteName">Albert Einstein</strong><small id="quoteField">Fisika • Relativitas</small></div>
+    </div>
+    <div class="quote-nav">
+      <button id="quotePrev" aria-label="sebelumnya"><i class="fa-solid fa-arrow-left"></i></button>
+      <div class="quote-dots" id="quoteDots"></div>
+      <button id="quoteNext" aria-label="berikutnya"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </div>
+
+  <div class="quotes-grid reveal" id="quotesGrid"></div>
+</section>
+
+<!-- KONTAK / IG -->
+<section id="kontak" class="section kontak">
+  <div class="kontak-card reveal">
+    <div class="kontak-left">
+      <small>📡 INFO</small>
+      <h2>Follow <span class="ig-text">Instagram!</span></h2>
+      <p>Update kelas XI-5.</p>
+      <div class="kontak-btns">
+        <a id="btn-ig-kontak" href="https://instagram.com/xi5.assemble" target="_blank" class="btn btn-marvel big"><i class="fa-brands fa-instagram"></i> <span id="ig-username">@xi5.assemble</span></a>
+        <button class="btn btn-ghost" id="btn-share"><i class="fa-solid fa-share-nodes"></i> Bagikan</button>
+      </div>
+      <div class="kontak-meta">
+        <div><i class="fa-solid fa-school"></i> SMA NEGERI 1 SUMBER</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-brand"><div class="logo-kelas-box sm"><span>LOGO</span><img src="logo-kelas.png" alt="Logo Kelas" onerror="this.remove()" /></div><strong>XI-5 AVENGERS SCIENFIVE</strong><small>© 2026 XI-5 IPA</small></div>
+  <div class="foot-quote">"Scienfive. Belajar!"</div>
+</footer>
+
+<!-- MODAL DETAIL SISWA -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <button class="modal-x" id="modalX"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-hero" id="modalHero"><img src="https://api.dicebear.com/9.x/personas/svg?seed=XI-5&backgroundColor=0a1931" alt="Foto siswa" /></div>
+    <h3 id="modalNama">Nama</h3>
+    <p id="modalJabatan" class="modal-jabatan"></p>
+    <p id="modalQuote" class="modal-quote"></p>
+  </div>
+</div>
+
+<!-- MODAL STONE -->
+<div class="modal-bg" id="stoneBg">
+  <div class="modal stone-modal">
+    <button class="modal-x" id="stoneX"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-hero" id="stoneEmoji">💎</div>
+    <h3 id="stoneNama">Stone</h3>
+    <p id="stoneMapel" class="modal-alias">mapel</p>
+    <p id="stoneDesc" class="modal-quote"></p>
+    <div class="stone-guru" id="stoneGuru"></div>
+  </div>
+</div>
+
+<!-- LIGHTBOX GALERI — FULLSCREEN 1 LAYAR -->
+<div class="modal-bg" id="lightbox">
+  <div class="light-modal">
+    <div class="light-top">
+      <span id="lightCounter">1 / 1</span>
+      <button class="modal-x light-x" id="lightX"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <button class="light-nav prev" id="lightPrev" aria-label="sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="light-zoom" id="lightZoom">
+      <img id="lightImg" src="" alt="Foto kenangan" draggable="false" />
+    </div>
+    <button class="light-nav next" id="lightNext" aria-label="berikutnya"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="light-bar">
+      <p id="lightCap"></p>
+      <div class="zoom-btns">
+        <button id="zoomOut" aria-label="perkecil">−</button>
+        <button id="zoomReset" aria-label="reset">⤢</button>
+        <button id="zoomIn" aria-label="perbesar">+</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
