@@ -137,13 +137,14 @@ section{position:relative;padding:90px 6vw;max-width:1280px;margin:0 auto;z-inde
 .shield-cap {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 18%;
   bottom: auto;
-  width: 110px;
-  height: 110px;
+  width: 64px;
+  height: 64px;
   transform: translate(-50%, -50%);
-  z-index: 5;
+  z-index: 2;
   animation: float 6s ease-in-out infinite;
+  pointer-events: none;
 }
 .shield-cap .c1,.shield-cap .c2,.shield-cap .c3{border-radius:50%;display:grid;place-items:center}
 .c1{width:100%;height:100%;background:conic-gradient(var(--red) 0 25%,#fff 0 50%,var(--red) 0 75%,#fff 0);padding:10px}
