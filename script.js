@@ -172,12 +172,12 @@ function renderSiswa(){
 }
 // Foto profil: pakai s.foto kalau ada (cth: "foto/adela.jpg"), kalau kosong pakai avatar otomatis dari nama
 function fotoURL(s){
-  if(s.foto) return s.foto;
-  return "https://api.dicebear.com/9.x/personas/svg?seed=" + encodeURIComponent(s.nama) + "&backgroundColor=0a1931,1a56ff,ed1d24,ffbf00";
+  return s.foto || "";
 }
 function cardHTML(s){
   return `<div class="siswa-card ${s.jabatan?'pengurus':''}" data-nama="${s.nama}">
-    <div class="ava"><img src="${fotoURL(s)}" alt="Foto ${s.nama}" loading="lazy" /></div><h4>${s.nama}</h4>
+    ${s.foto ? `<div class="ava"><img src="${s.foto}" alt="Foto ${s.nama}" loading="lazy" /></div>` : ""}
+    <h4>${s.nama}</h4>
     ${s.jabatan?`<span class="jabatan">★ ${s.jabatan.toUpperCase()}</span>`:""}
   </div>`;
 }
@@ -185,8 +185,10 @@ function strukturHTML(s,i){
   return `<div class="struktur-node" data-nama="${s.nama}">
     <div class="struktur-dot">${i+1}</div>
     <div class="struktur-card">
-      <div class="ava sm"><img src="${fotoURL(s)}" alt="Foto ${s.nama}" loading="lazy" /></div>
-      <div class="struktur-info"><h4>${s.nama}</h4><span class="jabatan">★ ${s.jabatan.toUpperCase()}</span></div>
+      <div class="struktur-info">
+        <h4>${s.nama}</h4>
+        <span class="jabatan">★ ${s.jabatan.toUpperCase()}</span>
+      </div>
     </div>
   </div>`;
 }
