@@ -176,7 +176,6 @@ function fotoURL(s){
 }
 function cardHTML(s){
   return `<div class="siswa-card ${s.jabatan?'pengurus':''}" data-nama="${s.nama}">
-    ${s.foto ? `<div class="ava"><img src="${s.foto}" alt="Foto ${s.nama}" loading="lazy" /></div>` : ""}
     <h4>${s.nama}</h4>
     ${s.jabatan?`<span class="jabatan">★ ${s.jabatan.toUpperCase()}</span>`:""}
   </div>`;
