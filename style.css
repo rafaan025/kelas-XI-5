@@ -375,3 +375,40 @@ footer{max-width:1280px;margin:0 auto;padding:30px 6vw 50px;display:flex;justify
     display: none;
   }
 }
+/* ===== OPTIMASI PERFORMA XI-5 AVENGERS ===== */
+
+/* Hentikan animasi latar yang berat */
+.bg-blob {
+  animation: none !important;
+  filter: blur(45px);
+}
+
+.bg-formulas span,
+.hero-formulas span {
+  animation: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+/* Ringankan efek transparansi navbar */
+#navbar {
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+/* Cahaya kursor tidak diperlukan untuk scroll */
+#cursor-glow {
+  display: none !important;
+}
+
+/* Kurangi animasi yang memicu gerakan saat scroll */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
