@@ -401,7 +401,6 @@ if(tilt){tilt.parentElement.onmousemove=e=>{
 
 // Cursor glow
 addEventListener("mousemove",e=>{const g=$("#cursor-glow");g.style.left=e.clientX+"px";g.style.top=e.clientY+"px"});
-
 // Particles: atom + ember
 const cv=$("#particles"),ctx=cv.getContext("2d");let P=[];
 function resize(){cv.width=innerWidth;cv.height=innerHeight}
@@ -412,60 +411,3 @@ for(let i=0;i<70;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHei
   ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fillStyle=`rgba(${p.c},${p.o})`;ctx.fill()});
  requestAnimationFrame(loop)})();
 // Particles: atom + ember
-// Particles: versi ringan
-const cv = $("#particles");
-const ctx = cv ? cv.getContext("2d") : null;
-let P = [];
-let particleFrame = 0;
-let lastFrame = 0;
-
-function resizeParticles() {
-  if (!cv || !ctx) return;
-  cv.width = innerWidth;
-  cv.height = innerHeight;
-}
-
-if (cv && ctx) {
-  resizeParticles();
-  addEventListener("resize", resizeParticles, { passive: true });
-
-  // Dari 70 menjadi 25 partikel
-  for (let i = 0; i < 25; i++) {
-    P.push({
-      x: Math.random() * innerWidth,
-      y: Math.random() * innerHeight,
-      r: Math.random() * 1.5 + 0.5,
-      s: Math.random() * 0.4 + 0.15,
-      c: Math.random() > 0.5
-        ? "56,225,255"
-        : "237,29,36",
-      o: Math.random() * 0.35 + 0.15
-    });
-  }
-
-  function drawParticles(time) {
-    particleFrame = requestAnimationFrame(drawParticles);
-
-    // Batasi gambar menjadi sekitar 30 FPS
-    if (time - lastFrame < 33) return;
-    lastFrame = time;
-
-    ctx.clearRect(0, 0, cv.width, cv.height);
-
-    for (const p of P) {
-      p.y -= p.s;
-
-      if (p.y < 0) {
-        p.y = cv.height;
-        p.x = Math.random() * cv.width;
-      }
-
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${p.c},${p.o})`;
-      ctx.fill();
-    }
-  }
-
-  particleFrame = requestAnimationFrame(drawParticles);
-}
