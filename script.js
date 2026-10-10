@@ -410,4 +410,4 @@ for(let i=0;i<70;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHei
  P.forEach(p=>{p.y-=p.s;if(p.y<0){p.y=cv.height;p.x=Math.random()*cv.width}
   ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fillStyle=`rgba(${p.c},${p.o})`;ctx.fill()});
  requestAnimationFrame(loop)})();
-// Particles: atom + ember
+
