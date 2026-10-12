@@ -61,7 +61,7 @@ const DATA_SISWA = [
   { nama: "Vino Arief Maulana", alias: "Spider-Gwen", emoji: "🎸", jabatan: "", ig: "https://instagram.com/vino.arief", quote: "Nilai aman." },
   { nama: "Vivia Refania", alias: "Nick Fury", emoji: "😎", jabatan: "", ig: "https://instagram.com/vivia.refania", quote: "pokoknya gituh." },
   { nama: "Wafi Hayfa Nugraha", alias: "Mantis", emoji: "🦗", jabatan: "", ig: "https://instagram.com/wafi.hayfa", quote: "Teman semua." },
-  { nama: "Wirahma Yudha", alias: "Drax", emoji: "😂", jabatan: "", ig: "https://instagram.com/wirahma.yudha", quote: "Lucu. Pinter." },
+  { nama: "Wirahma Yudha", alias: "Drax", emoji: "😂", jabatan: "", ig: "https://instagram.com/wirahma.yudha", quote: "Tampan, pinter, pemberani, sholeh jujur, baik." },
   { nama: "Yuni Makiyah Syahidah", alias: "Happy Hogan", emoji: "🚗", jabatan: "", ig: "https://instagram.com/yuni.makiyah", quote: "Siaga membantu." },
   { nama: "Zahra Alzena Bahi Ramadani", alias: "Phil Coulson", emoji: "📋", jabatan: "", ig: "https://instagram.com/zahra.alzena", quote: "Andalan kelas." },
 ];
