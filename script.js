@@ -52,7 +52,7 @@ const DATA_SISWA = [
   { nama: "Pelangi Alifa", alias: "Captain Carter", emoji: "🇬🇧", jabatan: "", ig: "https://instagram.com/pelangi.alifa", quote: "Habis hujan, pelangi." },
   { nama: "Rafa Abdillah Nurakhman", foto: "Rafa.jpeg.jpeg", alias: "Ms. Marvel", emoji: "✨", jabatan: "sekertaris", ig: "https://instagram.com/rafa.abdillah", quote: "Hero beneran." },
   { nama: "Riska Maulida A", alias: "She-Hulk", emoji: "💚", jabatan: "", ig: "https://instagram.com/riska.maulida", quote: "Kuat. Cerdas." },
-  { nama: "Rifqi Zidan Farras", alias: "Moon Knight", emoji: "🌙", jabatan: "", ig: "https://instagram.com/rifqi.zidan", quote: "Zubaedah pengocok poker." },
+  { nama: "Rifqi Zidan Farras", alias: "Moon Knight", emoji: "🌙", jabatan: "", ig: "https://instagram.com/rifqi.zidan", quote: "Zidan Admint." },
   { nama: "Salwa Azahra", alias: "Shang-Chi", emoji: "🐉", jabatan: "", ig: "https://instagram.com/salwa.azahra", quote: "Fokus. Bisa." },
   { nama: "Sarah Amellia Febrianti", alias: "Sersi", emoji: "💎", jabatan: "", ig: "https://instagram.com/sarah.amellia", quote: "Biasa jadi luar biasa." },
   { nama: "Saskia Dewi", alias: "Nova", emoji: "☄️", jabatan: "", ig: "https://instagram.com/saskia.dewi", quote: "Meluncur cepat." },
